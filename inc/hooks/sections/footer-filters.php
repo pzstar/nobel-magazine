@@ -5,7 +5,7 @@
         function nobel_magazine_foooter_class_cb( $classes ) {
             /** Footer Column Layout */
             $footer_column = get_theme_mod( 'nobel_magazine_footer_col', 'col-4' );
-            $classes[] = 'gm-'.$footer_column;
+            $classes[] = 'nm-'.$footer_column;
 
             return $classes;
         }
@@ -14,7 +14,7 @@
     if( !function_exists( 'nobel_magazine_foooter_class' ) ) {
         function nobel_magazine_foooter_class() {
             $classes = array(
-                'gm-site-footer',
+                'nm-site-footer',
             );
             $classes_html = 'class="';
         

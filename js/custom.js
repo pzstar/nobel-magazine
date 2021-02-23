@@ -1,27 +1,27 @@
 jQuery(document).ready(function($) {
   /** Preloader */
-  $(".gm-preloader").addClass("remove");
+  $(".nm-preloader").addClass("remove");
 
   /** Goto Top */
   $("#gotop").gotop();
 
   /** Search Toggle */
-  $(".gm-search .search-open").on("click", function(e) {
+  $(".nm-search .search-open").on("click", function(e) {
     e.preventDefault();
     $(this)
-      .parents(".gm-search")
+      .parents(".nm-search")
       .addClass("active");
   });
 
-  $(".gm-search .search-close").on("click", function(e) {
+  $(".nm-search .search-close").on("click", function(e) {
     e.preventDefault();
     $(this)
-      .parents(".gm-search")
+      .parents(".nm-search")
       .removeClass("active");
   });
 
   /** Newsticker */
-  $(".gm-news-ticker .ticker-lists").owlCarousel({
+  $(".nm-news-ticker .ticker-lists").owlCarousel({
     items: 1,
     autoplay: true,
     nav: false,

@@ -28,10 +28,10 @@
     ?>
 
     <body <?php body_class(); ?>>
-        <div id="gm-page">
+        <div id="nm-page">
             <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'nobel-magazine'); ?></a>
 
             <?php do_action('nobel_magazine_header'); ?>
 
-            <div id="gm-content" class="gm-site-content">
-                <div class="gm-container">
+            <div id="nm-content" class="nm-site-content">
+                <div class="nm-container">

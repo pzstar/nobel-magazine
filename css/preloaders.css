@@ -1,5 +1,5 @@
 /** Preloader Styles **/
-.gm-preloader {
+.nm-preloader {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -9,7 +9,7 @@
   opacity: 1;
 }
 
-.gm-preloader svg {
+.nm-preloader svg {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -17,11 +17,11 @@
   transform: translate(-50%, -50%) rotate(45deg) scale(1);
 }
 
-.gm-preloader .stroke-still {
+.nm-preloader .stroke-still {
   stroke: #232323;
 }
 
-.gm-preloader .stroke-animation {
+.nm-preloader .stroke-animation {
   -webkit-animation: stroke-spacing 1.2s ease-in, stroke-color 4.8s linear;
   animation: stroke-spacing 1.2s ease-in, stroke-color 4.8s linear;
   -webkit-animation-iteration-count: infinite;
@@ -128,7 +128,7 @@
   }
 }
 
-.gm-preloader.remove {
+.nm-preloader.remove {
   opacity: 0;
   visibility: hidden;
 }

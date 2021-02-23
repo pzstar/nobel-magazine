@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-  var toggleSection = $(".nobel-magazine-toggle-section");
+  var toggleSection = $(".nm-toggle-section");
   /*
      toggleSection.each(
      function () {

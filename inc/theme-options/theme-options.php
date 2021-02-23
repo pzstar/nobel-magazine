@@ -33,12 +33,12 @@ function nobel_magazine_theme_options($wp_customize) {
     require GOOD_MAGAZINE_OPT_DIR . 'custom-controls/custom-controls.php';
 
     /** Register Control Type */
-    $wp_customize->register_control_type('Nobel_Magazine_Background_Control');
-    $wp_customize->register_control_type('Nobel_Magazine_Control_Tab');
+    $wp_customize->register_control_type('Nobel_Magazine_Background_Image');
+    $wp_customize->register_control_type('Nobel_Magazine_Tab');
     $wp_customize->register_control_type('Nobel_Magazine_Dimensions_Control');
-    $wp_customize->register_control_type('Nobel_Magazine_Range_Slider_Control');
-    $wp_customize->register_control_type('Nobel_Magazine_Sortable_Control');
-    $wp_customize->register_control_type('Nobel_Magazine_Color_Tab_Control');
+    $wp_customize->register_control_type('Nobel_Magazine_Responsive_Range_Slider');
+    $wp_customize->register_control_type('Nobel_Magazine_Sortable');
+    $wp_customize->register_control_type('Nobel_Magazine_Tab');
     $wp_customize->register_section_type('Nobel_Magazine_Toggle_Section');
 
     /** Theme Options Sanitizations */

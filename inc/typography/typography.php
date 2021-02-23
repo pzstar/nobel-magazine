@@ -90,7 +90,7 @@ function nobel_magazine_typography_customize_register($wp_customize) {
         'sanitize_callback' => 'nobel_magazine_sanitize_text'
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Separator_Control($wp_customize, 'nobel_magazine_h_typography_seperator', array(
+    $wp_customize->add_control(new Nobel_Magazine_Separator($wp_customize, 'nobel_magazine_h_typography_seperator', array(
         'section' => 'nobel_magazine_header_typography'
     )));
 
@@ -100,14 +100,15 @@ function nobel_magazine_typography_customize_register($wp_customize) {
         'transport' => 'postMessage'
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Range_Control($wp_customize, 'nobel_magazine_hh1_font_size', array(
+    $wp_customize->add_control(new Nobel_Magazine_Range_Slider($wp_customize, 'nobel_magazine_hh1_font_size', array(
         'section' => 'nobel_magazine_header_typography',
         'label' => esc_html__('H1 Font Size', 'nobel-magazine'),
         'input_attrs' => array(
             'min' => 14,
             'max' => 100,
             'step' => 1
-        )
+        ),
+        'unit' => 'px'
     )));
 
     $wp_customize->add_setting('nobel_magazine_hh2_font_size', array(
@@ -116,14 +117,15 @@ function nobel_magazine_typography_customize_register($wp_customize) {
         'transport' => 'postMessage'
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Range_Control($wp_customize, 'nobel_magazine_hh2_font_size', array(
+    $wp_customize->add_control(new Nobel_Magazine_Range_Slider($wp_customize, 'nobel_magazine_hh2_font_size', array(
         'section' => 'nobel_magazine_header_typography',
         'label' => esc_html__('H2 Font Size', 'nobel-magazine'),
         'input_attrs' => array(
             'min' => 14,
             'max' => 100,
             'step' => 1
-        )
+        ),
+        'unit' => 'px'
     )));
 
     $wp_customize->add_setting('nobel_magazine_hh3_font_size', array(
@@ -132,14 +134,15 @@ function nobel_magazine_typography_customize_register($wp_customize) {
         'transport' => 'postMessage'
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Range_Control($wp_customize, 'nobel_magazine_hh3_font_size', array(
+    $wp_customize->add_control(new Nobel_Magazine_Range_Slider($wp_customize, 'nobel_magazine_hh3_font_size', array(
         'section' => 'nobel_magazine_header_typography',
         'label' => esc_html__('H3 Font Size', 'nobel-magazine'),
         'input_attrs' => array(
             'min' => 14,
             'max' => 100,
             'step' => 1
-        )
+        ),
+        'unit' => 'px'
     )));
 
     $wp_customize->add_setting('nobel_magazine_hh4_font_size', array(
@@ -148,14 +151,15 @@ function nobel_magazine_typography_customize_register($wp_customize) {
         'transport' => 'postMessage'
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Range_Control($wp_customize, 'nobel_magazine_hh4_font_size', array(
+    $wp_customize->add_control(new Nobel_Magazine_Range_Slider($wp_customize, 'nobel_magazine_hh4_font_size', array(
         'section' => 'nobel_magazine_header_typography',
         'label' => esc_html__('H4 Font Size', 'nobel-magazine'),
         'input_attrs' => array(
             'min' => 14,
             'max' => 100,
             'step' => 1
-        )
+        ),
+        'unit' => 'px'
     )));
 
     $wp_customize->add_setting('nobel_magazine_hh5_font_size', array(
@@ -164,14 +168,15 @@ function nobel_magazine_typography_customize_register($wp_customize) {
         'transport' => 'postMessage'
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Range_Control($wp_customize, 'nobel_magazine_hh5_font_size', array(
+    $wp_customize->add_control(new Nobel_Magazine_Range_Slider($wp_customize, 'nobel_magazine_hh5_font_size', array(
         'section' => 'nobel_magazine_header_typography',
         'label' => esc_html__('H5 Font Size', 'nobel-magazine'),
         'input_attrs' => array(
             'min' => 14,
             'max' => 100,
             'step' => 1
-        )
+        ),
+        'unit' => 'px'
     )));
 
     $wp_customize->add_setting('nobel_magazine_hh6_font_size', array(
@@ -180,14 +185,15 @@ function nobel_magazine_typography_customize_register($wp_customize) {
         'transport' => 'postMessage'
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Range_Control($wp_customize, 'nobel_magazine_hh6_font_size', array(
+    $wp_customize->add_control(new Nobel_Magazine_Range_Slider($wp_customize, 'nobel_magazine_hh6_font_size', array(
         'section' => 'nobel_magazine_header_typography',
         'label' => esc_html__('H6 Font Size', 'nobel-magazine'),
         'input_attrs' => array(
             'min' => 14,
             'max' => 100,
             'step' => 1
-        )
+        ),
+        'unit' => 'px'
     )));
 }
 

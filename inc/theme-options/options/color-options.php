@@ -29,7 +29,7 @@
         'sanitize_callback' => 'nobel_magazine_sanitize_text'
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Info_Text_Control($wp_customize, 'nobel_magazine_color_content_info', array(
+    $wp_customize->add_control(new Nobel_Magazine_Text_Info($wp_customize, 'nobel_magazine_color_content_info', array(
         'section' => 'colors',
         'description' => esc_html__('This settings apply only in the single posts (ie page and post detail pages only)', 'nobel-magazine')
     )));
@@ -85,6 +85,6 @@
         'sanitize_callback' => 'nobel_magazine_sanitize_text'
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Separator_Control($wp_customize, 'nobel_magazine_color_section_seperator2', array(
+    $wp_customize->add_control(new Nobel_Magazine_Separator($wp_customize, 'nobel_magazine_color_section_seperator2', array(
         'section' => 'colors'
     )));

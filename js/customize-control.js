@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
   // MultiCheck box Control JS
-  $('.customize-control-checkbox-multiple input[type="checkbox"]').on(
+  $('.customize-control-nm-checkbox-multiple input[type="checkbox"]').on(
     "change",
     function() {
       var checkbox_values = $(this)
@@ -21,12 +21,12 @@ jQuery(document).ready(function($) {
   );
 
   // Select Image Js
-  $(".select-image-control").on("change", function() {
+  $(".nm-image-selector").on("change", function() {
     var activeImage = $(this)
       .find(":selected")
       .attr("data-image");
     $(this)
-      .next(".select-image-wrap")
+      .next(".nm-image-container")
       .find("img")
       .attr("src", activeImage);
   });

@@ -28,14 +28,15 @@
         'transport' => 'refresh'
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Range_Control($wp_customize, 'nobel_magazine_website_width', array(
+    $wp_customize->add_control(new Nobel_Magazine_Range_Slider($wp_customize, 'nobel_magazine_website_width', array(
         'section' => 'nobel_magazine_general_options_section',
         'label' => esc_html__('Website Container Width', 'nobel-magazine'),
         'input_attrs' => array(
             'min' => 900,
             'max' => 1400,
             'step' => 10
-        )
+        ),
+        'unit' => '%'
     )));
 
     $wp_customize->add_setting('nobel_magazine_sidebar_width', array(
@@ -44,21 +45,22 @@
         'transport' => 'refresh'
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Range_Control($wp_customize, 'nobel_magazine_sidebar_width', array(
+    $wp_customize->add_control(new Nobel_Magazine_Range_Slider($wp_customize, 'nobel_magazine_sidebar_width', array(
         'section' => 'nobel_magazine_general_options_section',
         'label' => esc_html__('Sidebar Width (%)', 'nobel-magazine'),
         'input_attrs' => array(
             'min' => 20,
             'max' => 50,
             'step' => 1
-        )
+        ),
+        'unit' => '%'
     )));
 
     $wp_customize->add_setting('nobel_magazine_scroll_animation_seperator', array(
         'sanitize_callback' => 'nobel_magazine_sanitize_text'
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Separator_Control($wp_customize, 'nobel_magazine_scroll_animation_seperator', array(
+    $wp_customize->add_control(new Nobel_Magazine_Separator($wp_customize, 'nobel_magazine_scroll_animation_seperator', array(
         'section' => 'nobel_magazine_general_options_section'
     )));
 
@@ -72,7 +74,7 @@
         'default' => true
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Checkbox_Control($wp_customize, 'nobel_magazine_breadcrumb', array(
+    $wp_customize->add_control(new Nobel_Magazine_Toggle($wp_customize, 'nobel_magazine_breadcrumb', array(
         'section' => 'nobel_magazine_general_options_section',
         'label' => esc_html__('BreadCrumb', 'nobel-magazine'),
         'description' => esc_html__('Breadcrumbs are a great way of letting your visitors find out where they are on your site.', 'nobel-magazine')
@@ -83,7 +85,7 @@
         'default' => true
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Checkbox_Control($wp_customize, 'nobel_magazine_enable_preloader', array(
+    $wp_customize->add_control(new Nobel_Magazine_Toggle($wp_customize, 'nobel_magazine_enable_preloader', array(
         'section' => 'nobel_magazine_general_options_section',
         'label' => esc_html__('Enable Preloader', 'nobel-magazine'),
         'description' => esc_html__('Is a simple logo animations to keep visitors entertained while site is loading.', 'nobel-magazine')
@@ -94,7 +96,7 @@
         'default' => true
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Checkbox_Control($wp_customize, 'nobel_magazine_backtotop', array(
+    $wp_customize->add_control(new Nobel_Magazine_Toggle($wp_customize, 'nobel_magazine_backtotop', array(
         'section' => 'nobel_magazine_general_options_section',
         'label' => esc_html__('Back to Top Button', 'nobel-magazine'),
         'description' => esc_html__('A button on click scrolls to the top of the page.', 'nobel-magazine')

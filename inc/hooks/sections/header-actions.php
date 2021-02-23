@@ -5,7 +5,7 @@ if (!function_exists('nobel_magazine_header_start_cb')) {
 
     function nobel_magazine_header_start_cb() {
         ?>
-        <header id="gm-masthead" <?php nobel_magazine_header_class(); ?>>
+        <header id="nm-masthead" <?php nobel_magazine_header_class(); ?>>
             <?php
         }
 
@@ -24,21 +24,21 @@ if (!function_exists('nobel_magazine_header_start_cb')) {
             $top_header_right = get_theme_mod('nobel_magazine_th_right_display', 'date');
 
             if( $top_header_display == 'center' ) {
-                $top_header_class = 'gm-top-header-with-center';
+                $top_header_class = 'nm-top-header-with-center';
             } else if( $top_header_display == 'left' ) {
-                $top_header_class = 'gm-top-header-with-left';
+                $top_header_class = 'nm-top-header-with-left';
             } else if( $top_header_display == 'right' ) {
-                $top_header_class = 'gm-top-header-with-right';
+                $top_header_class = 'nm-top-header-with-right';
             } else if( $top_header_display == 'left-right' ) {
-                $top_header_class = 'gm-top-header-with-left-right';
+                $top_header_class = 'nm-top-header-with-left-right';
             }
 
             if ( $top_header_display !== 'none' ) {
                 ?>
-                <div class="gm-top-header <?php echo esc_attr( $top_header_class ); ?>">
-                    <div class="gm-container">
+                <div class="nm-top-header <?php echo esc_attr( $top_header_class ); ?>">
+                    <div class="nm-container">
                         <?php if( $top_header_display == 'left' || $top_header_display == 'left-right' ) : ?>
-                            <div class="gm-top-header-left">
+                            <div class="nm-top-header-left">
                                 <?php
                                 switch ( $top_header_left ) {
                                     case 'social':
@@ -72,7 +72,7 @@ if (!function_exists('nobel_magazine_header_start_cb')) {
                             </div>
                         <?php endif; ?>
                         <?php if( $top_header_display == 'center' ) : ?>
-                            <div class="gm-top-header-center">
+                            <div class="nm-top-header-center">
                                 <?php
                                 switch ( $top_header_center ) {
                                     case 'social':
@@ -106,7 +106,7 @@ if (!function_exists('nobel_magazine_header_start_cb')) {
                             </div>
                         <?php endif; ?>
                         <?php if( $top_header_display == 'right' || $top_header_display == 'left-right' ) : ?>
-                            <div class="gm-top-header-right">
+                            <div class="nm-top-header-right">
                                 <?php
                                 switch ($top_header_right) {
                                     case 'social':
@@ -152,12 +152,12 @@ if (!function_exists('nobel_magazine_header_start_cb')) {
     if (!function_exists('nobel_magazine_main_header_cb')) {
 
         function nobel_magazine_main_header_cb() {
-            $header_layout = get_theme_mod('nobel_magazine_mh_layout', 'gm-header-style1');
+            $header_layout = get_theme_mod('nobel_magazine_mh_layout', 'nm-header-style1');
 
             /** Displays Main Header Section */
-            if ($header_layout == 'gm-header-style1') {
+            if ($header_layout == 'nm-header-style1') {
                 nobel_magazine_header_layout1();
-            } elseif ($header_layout == 'gm-header-style2') {
+            } elseif ($header_layout == 'nm-header-style2') {
                 nobel_magazine_header_layout2();
             }
         }
@@ -198,7 +198,7 @@ if (!function_exists('nobel_magazine_inner_page_banner_cb')) {
             }
             ?>
             <div class="inner-page-banner post-inner-page-banner" data-image-src="<?php echo esc_url($post_image[0]); ?>">
-                <div class="gm-container">
+                <div class="nm-container">
                     <?php
                     if ($display_category) {
                         nobel_magazine_post_categories_list(get_the_id());
@@ -225,7 +225,7 @@ if (!function_exists('nobel_magazine_inner_page_banner_cb')) {
             $page_title = nobel_magazine_get_title();
             ?>
             <div class="inner-page-banner">
-                <div class="gm-container">
+                <div class="nm-container">
                     <h1 class="page-title">
                         <?php
                         echo wp_kses($page_title, array(
@@ -277,26 +277,26 @@ if (!function_exists('nobel_magazine_site_branding')) {
 
     function nobel_magazine_site_branding() {
         ?>
-        <div class="gm-site-branding">
+        <div class="nm-site-branding">
             <?php
             the_custom_logo();
 
             $nobel_magazine_description = get_bloginfo('description', 'display');
             if ($nobel_magazine_description || is_customize_preview()) :
                 ?>
-                <div class="gm-site-title-description">
+                <div class="nm-site-title-description">
                     <?php
                     if (is_front_page() && is_home()) :
                         ?>
-                        <h1 class="gm-site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
+                        <h1 class="nm-site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
                         <?php
                     else :
                         ?>
-                        <p class="gm-site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
+                        <p class="nm-site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
                     <?php
                     endif;
                     ?>
-                    <p class="gm-site-description"><?php echo $nobel_magazine_description; /* WPCS: xss ok. */ ?></p>
+                    <p class="nm-site-description"><?php echo $nobel_magazine_description; /* WPCS: xss ok. */ ?></p>
                 </div>
             <?php endif; ?>
         </div><!-- .site-branding -->
@@ -309,13 +309,13 @@ if (!function_exists('nobel_magazine_site_navigation')) {
 
     function nobel_magazine_site_navigation() {
         ?>
-        <nav id="gm-site-navigation" class="gm-main-navigation">
-            <button class="gm-menu-toggle"><span></span></button>
+        <nav id="nm-site-navigation" class="nm-main-navigation">
+            <button class="nm-menu-toggle"><span></span></button>
             <?php
             wp_nav_menu(array(
                 'theme_location' => 'nobel-magazine-primary-menu',
                 'container' => false,
-                'menu_id' => 'gm-primary-menu',
+                'menu_id' => 'nm-primary-menu',
                 'fallback_cb' => false
             ));
             ?>
@@ -331,12 +331,12 @@ if (!function_exists('nobel_magazine_site_search')) {
         $show_search = get_theme_mod('nobel_magazine_mh_show_search', '');
         if ($show_search) :
             ?>
-            <div class="gm-search-icon">
-                <a href="#" class="gm-search-open"><i class="icon_search"></i></a>
+            <div class="nm-search-icon">
+                <a href="#" class="nm-search-open"><i class="icon_search"></i></a>
             </div>
 
-            <div class="gm-search-wrap">
-                <span class="gm-search-close"><i class="icon_close"></i></span>
+            <div class="nm-search-wrap">
+                <span class="nm-search-close"><i class="icon_close"></i></span>
                 <?php get_search_form(); ?>
             </div>
             <?php
@@ -350,8 +350,8 @@ if (!function_exists('nobel_magazine_header_layout1')) {
 
     function nobel_magazine_header_layout1() {
         ?>
-        <div class="gm-main-header">
-            <div class="gm-container">
+        <div class="nm-main-header">
+            <div class="nm-container">
                 <?php
                 nobel_magazine_site_branding();
                 nobel_magazine_site_navigation();
@@ -371,17 +371,17 @@ if (!function_exists('nobel_magazine_header_layout2')) {
         $show_search = get_theme_mod('nobel_magazine_mh_show_search', '');
         $display_socialicons = get_theme_mod('nobel_magazine_mh_show_socialicons', 1);
         ?>
-        <div class="gm-main-header">
-            <div class="gm-main-header-top">
-                <div class="gm-container">
+        <div class="nm-main-header">
+            <div class="nm-main-header-top">
+                <div class="nm-container">
                     <?php
                     nobel_magazine_site_branding();
                     ?>
                 </div>
             </div>
 
-            <div class="gm-main-header-nav">
-                <div class="gm-container">
+            <div class="nm-main-header-nav">
+                <div class="nm-container">
                     <?php
                     nobel_magazine_site_navigation();
                     nobel_magazine_site_search();

@@ -10,8 +10,7 @@
         'sanitize_callback' => 'wp_kses_post',
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Control_Tab($wp_customize, 'nobel_magazine_blog_sec_nav', array(
-        'type' => 'tab',
+    $wp_customize->add_control(new Nobel_Magazine_Tab($wp_customize, 'nobel_magazine_blog_sec_nav', array(
         'section' => 'nobel_magazine_blog_options_section',
         'priority' => 1,
         'buttons' => array(
@@ -66,7 +65,7 @@
         'default' => 'off'
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Switch_Control($wp_customize, 'nobel_magazine_display_frontpage_sections', array(
+    $wp_customize->add_control(new Nobel_Magazine_Switch($wp_customize, 'nobel_magazine_display_frontpage_sections', array(
         'section' => 'nobel_magazine_blog_options_section',
         'label' => esc_html__('Display Front Page Sections', 'nobel-magazine'),
         'on_off_label' => array(
@@ -81,7 +80,7 @@
         'default' => 'blog-layout1'
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Image_Select_Control($wp_customize, 'nobel_magazine_blog_layout', array(
+    $wp_customize->add_control(new Nobel_Magazine_Image_Selector($wp_customize, 'nobel_magazine_blog_layout', array(
         'section' => 'nobel_magazine_blog_options_section',
         'label' => esc_html__('Blog & Archive Layout', 'nobel-magazine'),
         'image_path' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'blog-layouts/',
@@ -133,7 +132,7 @@
         'default' => 100
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Range_Control($wp_customize, 'nobel_magazine_archive_excerpt_length', array(
+    $wp_customize->add_control(new Nobel_Magazine_Range_Slider($wp_customize, 'nobel_magazine_archive_excerpt_length', array(
         'section' => 'nobel_magazine_blog_options_section',
         'label' => esc_html__('Excerpt Length (words)', 'nobel-magazine'),
         'input_attrs' => array(
@@ -160,7 +159,7 @@
         'transport' => 'refresh'
     ));
     
-    $wp_customize->add_control(new Nobel_Magazine_Range_Control($wp_customize, 'nobel_magazine_blog_excerpt_length', array(
+    $wp_customize->add_control(new Nobel_Magazine_Range_Slider($wp_customize, 'nobel_magazine_blog_excerpt_length', array(
         'section' => 'nobel_magazine_blog_options_section',
         'label' => esc_html__('Excerpt Length', 'nobel-magazine'),
         'description' => esc_html__('(in Chars)', 'nobel-magazine'),
@@ -176,7 +175,7 @@
         'default' => true
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Checkbox_Control($wp_customize, 'nobel_magazine_blog_date', array(
+    $wp_customize->add_control(new Nobel_Magazine_Toggle($wp_customize, 'nobel_magazine_blog_date', array(
         'section' => 'nobel_magazine_blog_options_section',
         'label' => esc_html__('Display Posted Date', 'nobel-magazine')
     )));
@@ -186,7 +185,7 @@
         'default' => true
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Checkbox_Control($wp_customize, 'nobel_magazine_blog_author', array(
+    $wp_customize->add_control(new Nobel_Magazine_Toggle($wp_customize, 'nobel_magazine_blog_author', array(
         'section' => 'nobel_magazine_blog_options_section',
         'label' => esc_html__('Display Author', 'nobel-magazine')
     )));
@@ -196,7 +195,7 @@
         'default' => true
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Checkbox_Control($wp_customize, 'nobel_magazine_blog_comment', array(
+    $wp_customize->add_control(new Nobel_Magazine_Toggle($wp_customize, 'nobel_magazine_blog_comment', array(
         'section' => 'nobel_magazine_blog_options_section',
         'label' => esc_html__('Display Comment', 'nobel-magazine')
     )));
@@ -206,7 +205,7 @@
         'default' => true
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Checkbox_Control($wp_customize, 'nobel_magazine_blog_category', array(
+    $wp_customize->add_control(new Nobel_Magazine_Toggle($wp_customize, 'nobel_magazine_blog_category', array(
         'section' => 'nobel_magazine_blog_options_section',
         'label' => esc_html__('Display Category', 'nobel-magazine')
     )));
@@ -216,7 +215,7 @@
         'default' => true
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Checkbox_Control($wp_customize, 'nobel_magazine_blog_tag', array(
+    $wp_customize->add_control(new Nobel_Magazine_Toggle($wp_customize, 'nobel_magazine_blog_tag', array(
         'section' => 'nobel_magazine_blog_options_section',
         'label' => esc_html__('Display Tag', 'nobel-magazine')
     )));
@@ -226,7 +225,7 @@
         'default' => 'single-layout1'
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Image_Select_Control($wp_customize, 'nobel_magazine_single_layout', array(
+    $wp_customize->add_control(new Nobel_Magazine_Image_Selector($wp_customize, 'nobel_magazine_single_layout', array(
         'section' => 'nobel_magazine_blog_options_section',
         'label' => esc_html__('Single Post Layout', 'nobel-magazine'),
         'description' => esc_html__('This option can be overwritten in single page settings.', 'nobel-magazine'),
@@ -242,7 +241,7 @@
         'default' => true
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Checkbox_Control($wp_customize, 'nobel_magazine_single_categories', array(
+    $wp_customize->add_control(new Nobel_Magazine_Toggle($wp_customize, 'nobel_magazine_single_categories', array(
         'section' => 'nobel_magazine_blog_options_section',
         'label' => esc_html__('Display Categories', 'nobel-magazine')
     )));
@@ -252,7 +251,7 @@
         'default' => true
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Checkbox_Control($wp_customize, 'nobel_magazine_single_author', array(
+    $wp_customize->add_control(new Nobel_Magazine_Toggle($wp_customize, 'nobel_magazine_single_author', array(
         'section' => 'nobel_magazine_blog_options_section',
         'label' => esc_html__('Display Author', 'nobel-magazine')
     )));
@@ -262,7 +261,7 @@
         'default' => true
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Checkbox_Control($wp_customize, 'nobel_magazine_single_date', array(
+    $wp_customize->add_control(new Nobel_Magazine_Toggle($wp_customize, 'nobel_magazine_single_date', array(
         'section' => 'nobel_magazine_blog_options_section',
         'label' => esc_html__('Display Posted Date', 'nobel-magazine')
     )));
@@ -272,7 +271,7 @@
         'default' => true
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Checkbox_Control($wp_customize, 'nobel_magazine_single_comment_count', array(
+    $wp_customize->add_control(new Nobel_Magazine_Toggle($wp_customize, 'nobel_magazine_single_comment_count', array(
         'section' => 'nobel_magazine_blog_options_section',
         'label' => esc_html__('Display Comment Count', 'nobel-magazine')
     )));
@@ -282,7 +281,7 @@
         'default' => true
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Checkbox_Control($wp_customize, 'nobel_magazine_single_tags', array(
+    $wp_customize->add_control(new Nobel_Magazine_Toggle($wp_customize, 'nobel_magazine_single_tags', array(
         'section' => 'nobel_magazine_blog_options_section',
         'label' => esc_html__('Display Tags', 'nobel-magazine')
     )));

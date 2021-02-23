@@ -6,8 +6,8 @@ if (!function_exists('nobel_magazine_footer_wrapper_start_cb')) {
 
     function nobel_magazine_footer_wrapper_start_cb() {
         ?>
-        <footer id="gm-colophon" <?php nobel_magazine_foooter_class(); ?>>
-            <div class="gm-container">
+        <footer id="nm-colophon" <?php nobel_magazine_foooter_class(); ?>>
+            <div class="nm-container">
                 <?php
             }
 
@@ -26,11 +26,11 @@ if (!function_exists('nobel_magazine_footer_wrapper_start_cb')) {
                 }
                 ?>
                 <?php if( is_active_sidebar( 'footer-1' ) || is_active_sidebar( 'footer-2' ) || is_active_sidebar( 'footer-3' ) || is_active_sidebar( 'footer-4' ) ) : ?>
-                    <div class="gm-top-footer">
+                    <div class="nm-top-footer">
                         <?php
                         for ($i = 1; $i <= $col; $i++) {
                             ?>
-                            <div class="gm-foooter-col gm-footer-col<?php echo esc_attr($i); ?>">
+                            <div class="nm-foooter-col nm-footer-col<?php echo esc_attr($i); ?>">
                                 <?php
                                 $widget_area = 'footer-' . $i;
                                 if (is_active_sidebar($widget_area)) {
@@ -57,7 +57,7 @@ if (!function_exists('nobel_magazine_footer_wrapper_start_cb')) {
                 $enable_socialicons = get_theme_mod('nobel_magazine_footer_enable_socialicons', 'off');
                 ?>
                 <?php if( $footer_logo || $enable_socialicons ) : ?> 
-                    <div class="gm-mid-footer">
+                    <div class="nm-mid-footer">
                         <?php if ($footer_logo) : ?>
                             <div class="footer-logo">
                                 <img src="<?php echo esc_url($footer_logo); ?>" alt="<?php echo esc_attr(nobel_magazine_get_altofimage($footer_logo)); ?>">
@@ -85,7 +85,7 @@ if (!function_exists('nobel_magazine_footer_wrapper_start_cb')) {
                 $copyright_text = get_theme_mod('nobel_magazine_footer_copyright', '&copy; 2020 Magazine WordPress Theme - Nobel Magazine');
                 ?>
                 <?php if( $copyright_text ) : ?>
-                    <div class="gm-site-info">
+                    <div class="nm-site-info">
                         <?php
                         if ($copyright_text) {
                             echo esc_html($copyright_text);

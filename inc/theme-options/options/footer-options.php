@@ -10,8 +10,7 @@
         'sanitize_callback' => 'wp_kses_post',
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Control_Tab($wp_customize, 'nobel_magazine_footer_nav', array(
-        'type' => 'tab',
+    $wp_customize->add_control(new Nobel_Magazine_Tab($wp_customize, 'nobel_magazine_footer_nav', array(
         'section' => 'nobel_magazine_footer_section',
         'priority' => 1,
         'buttons' => array(
@@ -105,7 +104,7 @@
     ));
 
     // Registers example_background control
-    $wp_customize->add_control(new Nobel_Magazine_Background_Control($wp_customize, 'nobel_magazine_footer_bg', array(
+    $wp_customize->add_control(new Nobel_Magazine_Background_Image($wp_customize, 'nobel_magazine_footer_bg', array(
         'label' => esc_html__('Footer Background', 'nobel-magazine'),
         'section' => 'nobel_magazine_footer_section',
         'settings' => array(
@@ -124,7 +123,7 @@
         'transport' => 'refresh'
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Alpha_Color_Control($wp_customize, 'nobel_magazine_footer_bg_color', array(
+    $wp_customize->add_control(new Nobel_Magazine_Alpha_Color($wp_customize, 'nobel_magazine_footer_bg_color', array(
         'label' => esc_html__('Footer Background/Overlay Color', 'nobel-magazine'),
         'description' => esc_html__('To use background image, set the opacity of background color to 0', 'nobel-magazine'),
         'section' => 'nobel_magazine_footer_section'
@@ -142,7 +141,7 @@
         'transport' => 'refresh'
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Alpha_Color_Control($wp_customize, 'nobel_magazine_footer_border_color', array(
+    $wp_customize->add_control(new Nobel_Magazine_Alpha_Color($wp_customize, 'nobel_magazine_footer_border_color', array(
         'label' => esc_html__('Footer Border Color', 'nobel-magazine'),
         'section' => 'nobel_magazine_footer_section'
     )));
@@ -199,7 +198,7 @@
         'default' => 'off'
     ));
     
-    $wp_customize->add_control(new Nobel_Magazine_Switch_Control($wp_customize, 'nobel_magazine_footer_enable_socialicons', array(
+    $wp_customize->add_control(new Nobel_Magazine_Switch($wp_customize, 'nobel_magazine_footer_enable_socialicons', array(
         'section' => 'nobel_magazine_footer_section',
         'label' => esc_html__('Enable Sticky Header', 'nobel-magazine'),
         'on_off_label' => array(

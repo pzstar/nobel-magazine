@@ -9,7 +9,7 @@
  * @package Nobel Magazine
  */
 ?>
-</div> <!-- .gm-container -->
+</div> <!-- .nm-container -->
 </div><!-- #content -->
 
 <?php do_action('nobel_magazine_footer'); ?>

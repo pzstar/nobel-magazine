@@ -8,7 +8,7 @@
                 $blog_layout = get_theme_mod( 'nobel_magazine_blog_layout', 'blog-layout1' );
                 if( 'blog-layout2' == $blog_layout && $wp_query->current_post == 1 ) {
                     ?>
-                    <div class="gm-post-in-wrap">
+                    <div class="nm-post-in-wrap">
                     <?php
                 }
 
@@ -132,7 +132,7 @@
 
                 if ( 'blog-layout2' == $blog_layout && $wp_query->post_count != 1 && $wp_query->post_count == ( $wp_query->current_post + 1 ) ) {
                     ?>
-                    </div> <!-- gm-post-in-wrap -->
+                    </div> <!-- nm-post-in-wrap -->
                     <?php
                 }
             }

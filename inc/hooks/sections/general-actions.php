@@ -6,7 +6,7 @@
             $enable_preloader = get_theme_mod( 'nobel_magazine_enable_preloader', 1 );
             if( $enable_preloader ) {
                 ?>
-                    <div class="gm-preloader">
+                    <div class="nm-preloader">
                         <svg width="200" height="200" viewBox="0 0 100 100">
                             <polyline class="line-cornered stroke-still" points="0,0 100,0 100,100" stroke-width="10" fill="none"></polyline>
                             <polyline class="line-cornered stroke-still" points="0,0 0,100 100,100" stroke-width="10" fill="none"></polyline>

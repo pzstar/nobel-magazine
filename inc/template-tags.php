@@ -221,7 +221,7 @@ if (!function_exists('nobel_magazine_top_menu')) {
         wp_nav_menu(array(
             'menu' => $menu,
             'container' => false,
-            'menu_class' => 'gm-top-header-menu'
+            'menu_class' => 'nm-top-header-menu'
         ));
     }
 
@@ -256,7 +256,7 @@ if (!function_exists('nobel_magazine_top_txtblock')) {
             return;
         }
         ?>
-        <div class="gm-top-txtblock">
+        <div class="nm-top-txtblock">
             <?php echo wp_kses_post($txtblock); ?>
         </div>
         <?php
@@ -279,7 +279,7 @@ if (!function_exists('nobel_magazine_top_newsticker')) {
 
         $ticker_query = new WP_Query($ticker_args);
         ?>
-        <div class="gm-news-ticker">
+        <div class="nm-news-ticker">
             <?php if ($news_ticker_title) : ?>
                 <span class="title"><?php echo esc_html($news_ticker_title); ?></span>
             <?php endif; ?>
@@ -312,7 +312,7 @@ if (!function_exists('nobel_magazine_top_date')) {
 
     function nobel_magazine_top_date() {
         ?>
-        <div class="gm-top-date"><?php echo esc_html(date('l jS F Y')); ?></div>
+        <div class="nm-top-date"><?php echo esc_html(date('l jS F Y')); ?></div>
         <?php
     }
 
@@ -331,7 +331,7 @@ if (!function_exists('nobel_magazine_socialicons')) {
 
         if (!empty($social_icon_lists)) {
             ?>
-            <ul class="gm-top-social-icons">
+            <ul class="nm-top-social-icons">
                 <?php
                 foreach ($social_icon_lists as $social_icon) {
                     if ($social_icon['enable']) {

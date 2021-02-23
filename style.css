@@ -854,12 +854,12 @@ object {
 ## General
 --------------------------------------------------------------*/
 
-.gm-container {
+.nm-container {
   width: 1170px;
   margin: 0 auto;
 }
 
-.gm-menu-toggle {
+.nm-menu-toggle {
   display: none;
 }
 
@@ -868,79 +868,79 @@ object {
 --------------------------------------------------------------*/
 
 /* Top Header */
-.gm-top-header {
+.nm-top-header {
   background-color: #000;
   color: #fff;
   font-size: 0.9rem;
 }
 
-.gm-top-header .gm-container {
+.nm-top-header .nm-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 50px;
 }
 
-.gm-top-txtblock p:last-child,
-.gm-top-txtblock ul:last-child,
-.gm-top-txtblock ol:last-child {
+.nm-top-txtblock p:last-child,
+.nm-top-txtblock ul:last-child,
+.nm-top-txtblock ol:last-child {
   margin-bottom: 0;
 }
 
 /* Main Header */
-.gm-header-style1 .gm-main-header .gm-container,
-.gm-header-style2 .gm-main-header-nav .gm-container {
+.nm-header-style1 .nm-main-header .nm-container,
+.nm-header-style2 .nm-main-header-nav .nm-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 90px;
 }
 
-.gm-site-branding {
+.nm-site-branding {
   padding: 15px 0;
   display: flex;
   align-items: center;
 }
 
-.gm-site-branding + .gm-site-title-description {
+.nm-site-branding + .nm-site-title-description {
   margin-left: 15px;
 }
 
-.gm-site-title-description .gm-site-title {
+.nm-site-title-description .nm-site-title {
   font-size: 1.8rem;
   margin: 0;
   line-height: 1.1;
 }
 
-.gm-site-title-description .gm-site-description {
+.nm-site-title-description .nm-site-description {
   font-size: 1rem;
   margin: 10px 0 0;
   line-height: 1.1;
 }
 
-.gm-main-navigation ul {
+.nm-main-navigation ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.gm-main-navigation ul li {
+.nm-main-navigation ul li {
   position: relative;
 }
 
-.gm-main-navigation ul li a {
+.nm-main-navigation ul li a {
   display: block;
 }
 
-#gm-primary-menu {
+#nm-primary-menu {
   display: flex;
 }
 
-#gm-primary-menu > li {
+#nm-primary-menu > li {
   margin: 0 15px;
 }
 
-#gm-primary-menu ul {
+#nm-primary-menu ul {
   display: none;
   position: absolute;
   left: 0;
@@ -950,91 +950,91 @@ object {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-#gm-primary-menu li:hover > ul {
+#nm-primary-menu li:hover > ul {
   display: block;
 }
 
-#gm-primary-menu ul ul {
+#nm-primary-menu ul ul {
   left: 100%;
   top: 0;
 }
 
-#gm-primary-menu ul li > a {
+#nm-primary-menu ul li > a {
   padding: 10px 20px;
 }
 
-.gm-main-header-top {
+.nm-main-header-top {
   padding: 20px 0;
 }
 
-.gm-main-header-nav {
+.nm-main-header-nav {
   background: #000;
 }
 
 /* Search Box */
-.gm-search-wrap {
+.nm-search-wrap {
   display: none;
 }
 
-.gm-search-open {
+.nm-search-open {
 }
 
 /*--------------------------------------------------------------
 ## Footer
 --------------------------------------------------------------*/
-.gm-site-footer {
+.nm-site-footer {
   background: #000;
   color: #fff;
 }
 
-.gm-site-footer ul,
-.gm-site-footer ol {
+.nm-site-footer ul,
+.nm-site-footer ol {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.gm-site-footer li {
+.nm-site-footer li {
   margin-bottom: 10px;
 }
 
-.gm-site-footer a {
+.nm-site-footer a {
   color: #fff;
 }
 
-.gm-top-footer {
+.nm-top-footer {
   padding: 40px 0;
   margin: 0 -15px;
   display: flex;
 }
 
-.gm-top-footer .gm-foooter-col {
+.nm-top-footer .nm-foooter-col {
   padding: 0 15px;
 }
 
-.gm-site-footer.gm-col-4 .gm-top-footer .gm-foooter-col {
+.nm-site-footer.nm-col-4 .nm-top-footer .nm-foooter-col {
   width: 25%;
 }
 
-.gm-site-footer.gm-col-2 .gm-top-footer .gm-foooter-col {
+.nm-site-footer.nm-col-2 .nm-top-footer .nm-foooter-col {
   width: 50%;
 }
 
-.gm-site-footer.gm-col-3 .gm-top-footer .gm-foooter-col {
+.nm-site-footer.nm-col-3 .nm-top-footer .nm-foooter-col {
   width: 33.33%;
 }
 
-.gm-site-footer.gm-col-1 .gm-top-footer .gm-foooter-col {
+.nm-site-footer.nm-col-1 .nm-top-footer .nm-foooter-col {
   width: 100%;
 }
 
-.gm-mid-footer {
+.nm-mid-footer {
   text-align: center;
   padding: 30px 0;
   border-top: 1px solid #333;
 }
 
-.gm-site-info {
+.nm-site-info {
   background: #222;
   padding: 20px;
   text-align: center;

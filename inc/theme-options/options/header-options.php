@@ -1,5 +1,7 @@
 <?php
 
+$wp_customize->remove_control('display_header_text');
+
 /** Header Options Panel */
 $wp_customize->add_panel('nobel_magazine_header_options', array(
     'title' => __('Header Options', 'nobel-magazine'),
@@ -8,10 +10,31 @@ $wp_customize->add_panel('nobel_magazine_header_options', array(
 ));
 
 /** Title & Tagline */
-$wp_customize->remove_section('title_tagline');
 $wp_customize->add_section('title_tagline', array(
     'title' => __('Title & Logo', 'nobel-magazine'),
     'panel' => 'nobel_magazine_header_options',
+));
+
+$wp_customize->add_setting('nobel_magazine_hide_title', array(
+    'default' => false,
+    'sanitize_callback' => 'nobel_magazine_sanitize_checkbox',
+));
+
+$wp_customize->add_control('nobel_magazine_hide_title', array(
+    'label' => __('Hide Site Title', 'nobel-magazine'),
+    'section' => 'title_tagline',
+    'type' => 'checkbox',
+));
+
+$wp_customize->add_setting('nobel_magazine_hide_tagline', array(
+    'default' => false,
+    'sanitize_callback' => 'nobel_magazine_sanitize_checkbox',
+));
+
+$wp_customize->add_control('nobel_magazine_hide_tagline', array(
+    'label' => __('Hide Site Tagline', 'nobel-magazine'),
+    'section' => 'title_tagline',
+    'type' => 'checkbox',
 ));
 
 /** Top Header Options */
@@ -32,8 +55,8 @@ $wp_customize->add_control(new Nobel_Magazine_Tab($wp_customize, 'nobel_magazine
         array(
             'name' => esc_html__('Content', 'nobel-magazine'),
             'fields' => array(
-                'square_plus_caption_width_mobile',
                 'nobel_magazine_top_header_display',
+                'nobel_magazine_top_header_seperator',
                 'nobel_magazine_th_left_display',
                 'nobel_magazine_th_center_display',
                 'nobel_magazine_th_right_display',
@@ -49,43 +72,13 @@ $wp_customize->add_control(new Nobel_Magazine_Tab($wp_customize, 'nobel_magazine
             'fields' => array(
                 'nobel_magazine_th_height',
                 'nobel_magazine_th_bg_color',
+                'nobel_magazine_th_enable_bottom_border',
                 'nobel_magazine_th_bottom_border_color',
                 'nobel_magazine_th_text_color',
                 'nobel_magazine_th_anchor_color',
             ),
         ),
     ),
-)));
-
-$wp_customize->add_setting('square_plus_caption_width', array(
-    'default' => '50',
-    'transport' => 'postMessage'
-));
-
-$wp_customize->add_setting('square_plus_caption_width_tablet', array(
-    'default' => '70',
-    'transport' => 'postMessage'
-));
-
-$wp_customize->add_setting('square_plus_caption_width_mobile', array(
-    'default' => '90',
-    'transport' => 'postMessage'
-));
-
-$wp_customize->add_control(new Nobel_Magazine_Responsive_Range_Slider($wp_customize, 'square_plus_caption_width', array(
-    'section' => 'nobel_magazine_top_header_options',
-    'settings' => array(
-        'desktop' => 'square_plus_caption_width',
-        'tablet' => 'square_plus_caption_width_tablet',
-        'mobile' => 'square_plus_caption_width_mobile',
-    ),
-    'label' => esc_html__('Caption Width(%)', 'square-plus'),
-    'input_attrs' => array(
-        'min' => 30,
-        'max' => 100,
-        'step' => 1,
-    ),
-    'unit' => '%'
 )));
 
 $wp_customize->add_setting('nobel_magazine_top_header_display', array(
@@ -96,7 +89,7 @@ $wp_customize->add_setting('nobel_magazine_top_header_display', array(
 $wp_customize->add_control('nobel_magazine_top_header_display', array(
     'section' => 'nobel_magazine_top_header_options',
     'type' => 'select',
-    'label' => esc_html__('Top Header Display', 'meta-store'),
+    'label' => esc_html__('Header Display', 'meta-store'),
     'choices' => array(
         'none' => esc_html__('None', 'meta-store'),
         'center' => esc_html__('Center', 'meta-store'),
@@ -114,7 +107,7 @@ $wp_customize->add_setting('nobel_magazine_th_height', array(
 
 $wp_customize->add_control(new Nobel_Magazine_Range_Slider($wp_customize, 'nobel_magazine_th_height', array(
     'section' => 'nobel_magazine_top_header_options',
-    'label' => esc_html__('Top Header Height', 'nobel-magazine'),
+    'label' => esc_html__('Header Height', 'nobel-magazine'),
     'input_attrs' => array(
         'min' => 5,
         'max' => 100,
@@ -130,7 +123,7 @@ $wp_customize->add_setting('nobel_magazine_th_bg_color', array(
 ));
 
 $wp_customize->add_control(new Nobel_Magazine_Alpha_Color($wp_customize, 'nobel_magazine_th_bg_color', array(
-    'label' => esc_html__('Top Header Background', 'nobel-magazine'),
+    'label' => esc_html__('Header Background', 'nobel-magazine'),
     'section' => 'nobel_magazine_top_header_options',
     'palette' => array(
         '#FFFFFF',
@@ -142,18 +135,6 @@ $wp_customize->add_control(new Nobel_Magazine_Alpha_Color($wp_customize, 'nobel_
         'rgba( 255, 255, 255, 0.2 )',
         'rgba( 0, 0, 0, 0.2 )'
     )
-)));
-
-$wp_customize->add_setting('nobel_magazine_th_bottom_border_color', array(
-    'default' => '',
-    'sanitize_callback' => 'nobel_magazine_sanitize_color_alpha',
-    'transport' => 'refresh'
-));
-
-$wp_customize->add_control(new Nobel_Magazine_Alpha_Color($wp_customize, 'nobel_magazine_th_bottom_border_color', array(
-    'label' => esc_html__('Top Header Bottom Border Color', 'nobel-magazine'),
-    'description' => esc_html__('Leave Empty to Hide Border', 'nobel-magazine'),
-    'section' => 'nobel_magazine_top_header_options'
 )));
 
 $wp_customize->add_setting('nobel_magazine_th_text_color', array(
@@ -176,6 +157,27 @@ $wp_customize->add_setting('nobel_magazine_th_anchor_color', array(
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'nobel_magazine_th_anchor_color', array(
     'section' => 'nobel_magazine_top_header_options',
     'label' => esc_html__('Anchor(Link) Color', 'nobel-magazine')
+)));
+
+$wp_customize->add_setting('nobel_magazine_th_enable_bottom_border', array(
+    'sanitize_callback' => 'nobel_magazine_sanitize_boolean',
+    'default' => false
+));
+
+$wp_customize->add_control(new Nobel_Magazine_Toggle($wp_customize, 'nobel_magazine_th_enable_bottom_border', array(
+    'section' => 'nobel_magazine_top_header_options',
+    'label' => esc_html__('Enable Bottom Border', 'nobel-magazine')
+)));
+
+$wp_customize->add_setting('nobel_magazine_th_bottom_border_color', array(
+    'default' => '',
+    'sanitize_callback' => 'nobel_magazine_sanitize_color_alpha',
+    'transport' => 'refresh'
+));
+
+$wp_customize->add_control(new Nobel_Magazine_Alpha_Color($wp_customize, 'nobel_magazine_th_bottom_border_color', array(
+    'label' => esc_html__('Bottom Border Color', 'nobel-magazine'),
+    'section' => 'nobel_magazine_top_header_options'
 )));
 
 $wp_customize->add_setting('nobel_magazine_th_left_display', array(

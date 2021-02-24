@@ -31,288 +31,9 @@ jQuery(document).ready(function ($) {
                 .change();
     });
 
-    $("body").on("click", "#menu_typography_link", function () {
-        wp.customize.section("menu_typography").expand();
-        return false;
-    });
-
-    $("#sub-accordion-panel-nobel_magazine_front_page_panel").sortable({
-        axis: "y",
-        helper: "clone",
-        cursor: "move",
-        items:
-                "> li.control-section:not(#accordion-section-nobel_magazine_slider_section)",
-        delay: 150,
-        update: function (event, ui) {
-            $("#sub-accordion-panel-nobel_magazine_front_page_panel")
-                    .find(".nobel-magazine-drag-spinner")
-                    .show();
-            nobel_magazine_sections_order(
-                    "#sub-accordion-panel-nobel_magazine_front_page_panel"
-                    );
-            $(".wp-full-overlay-sidebar-content").scrollTop(0);
-        }
-    });
-
-    // Homepage section - control visiblity toggle
-    var settingIds = [
-        "ticker",
-        "slider1",
-        "slider2",
-        "featured",
-        "tile1",
-        "tile2",
-        "mininews",
-        "leftnews",
-        "rightnews",
-        "fwcarousel",
-        "carousel1",
-        "carousel2",
-        "video",
-        "fwnews1",
-        "fwnews2",
-        "threecol"
-    ];
-
-    $.each(settingIds, function (i, settingId) {
-        wp.customize("nobel_magazine_" + settingId + "_bg_type", function (setting) {
-            var setupControlColorBg = function (control) {
-                var visibility = function () {
-                    if ("color-bg" === setting.get() || "image-bg" === setting.get()) {
-                        control.container.removeClass("customizer-hidden");
-                    } else {
-                        control.container.addClass("customizer-hidden");
-                    }
-                };
-                visibility();
-                setting.bind(visibility);
-            };
-
-            var setupControlImageBg = function (control) {
-                var visibility = function () {
-                    if ("image-bg" === setting.get()) {
-                        control.container.removeClass("customizer-hidden");
-                    } else {
-                        control.container.addClass("customizer-hidden");
-                    }
-                };
-                visibility();
-                setting.bind(visibility);
-            };
-
-            var setupControlVideoBg = function (control) {
-                var visibility = function () {
-                    if ("video-bg" === setting.get()) {
-                        control.container.removeClass("customizer-hidden");
-                    } else {
-                        control.container.addClass("customizer-hidden");
-                    }
-                };
-                visibility();
-                setting.bind(visibility);
-            };
-
-            var setupControlGradientBg = function (control) {
-                var visibility = function () {
-                    if ("gradient-bg" === setting.get()) {
-                        control.container.removeClass("customizer-hidden");
-                    } else {
-                        control.container.addClass("customizer-hidden");
-                    }
-                };
-                visibility();
-                setting.bind(visibility);
-            };
-
-            var setupControlOverlay = function (control) {
-                var visibility = function () {
-                    if ("color-bg" === setting.get() || "gradient-bg" === setting.get()) {
-                        control.container.addClass("customizer-hidden");
-                    } else {
-                        control.container.removeClass("customizer-hidden");
-                    }
-                };
-                visibility();
-                setting.bind(visibility);
-            };
-
-            wp.customize.control(
-                    "nobel_magazine_" + settingId + "_bg_color",
-                    setupControlColorBg
-                    );
-            wp.customize.control(
-                    "nobel_magazine_" + settingId + "_bg_image",
-                    setupControlImageBg
-                    );
-            wp.customize.control(
-                    "nobel_magazine_" + settingId + "_parallax_effect",
-                    setupControlImageBg
-                    );
-            wp.customize.control(
-                    "nobel_magazine_" + settingId + "_bg_video",
-                    setupControlVideoBg
-                    );
-            wp.customize.control(
-                    "nobel_magazine_" + settingId + "_bg_gradient",
-                    setupControlGradientBg
-                    );
-            wp.customize.control(
-                    "nobel_magazine_" + settingId + "_overlay_color",
-                    setupControlOverlay
-                    );
-        });
-    });
-
-    $.each(settingIds, function (i, settingId) {
-        wp.customize("nobel_magazine_" + settingId + "_section_seperator", function (
-                setting
-                ) {
-            var setupTopSeperator = function (control) {
-                var visibility = function () {
-                    if ("top" === setting.get() || "top-bottom" === setting.get()) {
-                        control.container.removeClass("customizer-hidden");
-                    } else {
-                        control.container.addClass("customizer-hidden");
-                    }
-                };
-                visibility();
-                setting.bind(visibility);
-            };
-
-            var setupBottomSeperator = function (control) {
-                var visibility = function () {
-                    if ("bottom" === setting.get() || "top-bottom" === setting.get()) {
-                        control.container.removeClass("customizer-hidden");
-                    } else {
-                        control.container.addClass("customizer-hidden");
-                    }
-                };
-                visibility();
-                setting.bind(visibility);
-            };
-
-            wp.customize.control(
-                    "nobel_magazine_" + settingId + "_seperator1",
-                    setupTopSeperator
-                    );
-            wp.customize.control(
-                    "nobel_magazine_" + settingId + "_top_seperator",
-                    setupTopSeperator
-                    );
-            wp.customize.control(
-                    "nobel_magazine_" + settingId + "_ts_color",
-                    setupTopSeperator
-                    );
-            wp.customize.control(
-                    "nobel_magazine_" + settingId + "_ts_height",
-                    setupTopSeperator
-                    );
-            wp.customize.control(
-                    "nobel_magazine_" + settingId + "_seperator2",
-                    setupBottomSeperator
-                    );
-            wp.customize.control(
-                    "nobel_magazine_" + settingId + "_bottom_seperator",
-                    setupBottomSeperator
-                    );
-            wp.customize.control(
-                    "nobel_magazine_" + settingId + "_bs_color",
-                    setupBottomSeperator
-                    );
-            wp.customize.control(
-                    "nobel_magazine_" + settingId + "_bs_height",
-                    setupBottomSeperator
-                    );
-        });
-    });
-
-    $.each(settingIds, function (i, settingId) {
-        wp.customize("nobel_magazine_" + settingId + "_enable_fullwindow", function (
-                setting
-                ) {
-            var setupControlFullWindow = function (control) {
-                var visibility = function () {
-                    if ("off" === setting.get()) {
-                        control.container.addClass("customizer-hidden");
-                    } else {
-                        control.container.removeClass("customizer-hidden");
-                    }
-                };
-                visibility();
-                setting.bind(visibility);
-            };
-
-            wp.customize.control(
-                    "nobel_magazine_" + settingId + "_align_item",
-                    setupControlFullWindow
-                    );
-        });
-    });
-
-    $.each(settingIds, function (i, settingId) {
-        wp.customize(
-                "nobel_magazine_" + settingId + "_overwrite_block_title_color",
-                function (setting) {
-                    var setupControlHide = function (control) {
-                        var visibility = function () {
-                            if (setting.get()) {
-                                control.container.removeClass("customizer-hidden");
-                            } else {
-                                control.container.addClass("customizer-hidden");
-                            }
-                        };
-                        visibility();
-                        setting.bind(visibility);
-                    };
-
-                    wp.customize.control(
-                            "nobel_magazine_" + settingId + "_block_title_color",
-                            setupControlHide
-                            );
-                    wp.customize.control(
-                            "nobel_magazine_" + settingId + "_block_title_background_color",
-                            setupControlHide
-                            );
-                    wp.customize.control(
-                            "nobel_magazine_" + settingId + "_block_title_border_color",
-                            setupControlHide
-                            );
-                }
-        );
-    });
-
-    wp.customize("nobel_magazine_preloader_type", function (setting) {
-        var setupControl = function (control) {
-            var visibility = function () {
-                if ("custom" === setting.get()) {
-                    control.container.removeClass("customizer-hidden");
-                } else {
-                    control.container.addClass("customizer-hidden");
-                }
-            };
-            visibility();
-            setting.bind(visibility);
-        };
-
-        var setupControl1 = function (control) {
-            var visibility = function () {
-                if ("custom" !== setting.get()) {
-                    control.container.removeClass("customizer-hidden");
-                } else {
-                    control.container.addClass("customizer-hidden");
-                }
-            };
-            visibility();
-            setting.bind(visibility);
-        };
-
-        wp.customize.control("nobel_magazine_preloader_image", setupControl);
-        wp.customize.control("nobel_magazine_preloader_color", setupControl1);
-    });
-
     /** Top Header Display Center */
     wp.customize("nobel_magazine_top_header_display", function (setting) {
-        var setupControl = function (control) {
+        var setupControlCenter = function (control) {
             var visibility = function () {
                 if ("center" === setting.get()) {
                     control.container.removeClass("customizer-hidden");
@@ -324,12 +45,9 @@ jQuery(document).ready(function ($) {
             setting.bind(visibility);
         };
 
-        wp.customize.control("nobel_magazine_th_center_display", setupControl);
-    });
+        wp.customize.control("nobel_magazine_th_center_display", setupControlCenter);
 
-    /** Top Header Display Left */
-    wp.customize("nobel_magazine_top_header_display", function (setting) {
-        var setupControl = function (control) {
+        var setupControlLeft = function (control) {
             var visibility = function () {
                 if ("left" === setting.get() || "left-right" === setting.get()) {
                     control.container.removeClass("customizer-hidden");
@@ -341,12 +59,9 @@ jQuery(document).ready(function ($) {
             setting.bind(visibility);
         };
 
-        wp.customize.control("nobel_magazine_th_left_display", setupControl);
-    });
+        wp.customize.control("nobel_magazine_th_left_display", setupControlLeft);
 
-    /** Top Header Display Right */
-    wp.customize("nobel_magazine_top_header_display", function (setting) {
-        var setupControl = function (control) {
+        var setupControlRight = function (control) {
             var visibility = function () {
                 if ("right" === setting.get() || "left-right" === setting.get()) {
                     control.container.removeClass("customizer-hidden");
@@ -358,7 +73,23 @@ jQuery(document).ready(function ($) {
             setting.bind(visibility);
         };
 
-        wp.customize.control("nobel_magazine_th_right_display", setupControl);
+        wp.customize.control("nobel_magazine_th_right_display", setupControlRight);
+    });
+
+    wp.customize("nobel_magazine_th_enable_bottom_border", function (setting) {
+        var setupControl = function (control) {
+            var visibility = function () {
+                if (setting.get()) {
+                    control.container.removeClass("customizer-hidden");
+                } else {
+                    control.container.addClass("customizer-hidden");
+                }
+            };
+            visibility();
+            setting.bind(visibility);
+        };
+
+        wp.customize.control("nobel_magazine_th_bottom_border_color", setupControl);
     });
 
     /** HTML Block *

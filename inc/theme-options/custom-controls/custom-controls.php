@@ -1528,9 +1528,12 @@ if (class_exists('WP_Customize_Control')) {
                 <div class="nm-range-slider-input">
                     <input type="number" value="<?php echo esc_attr($this->value()); ?>" class="nm-slider-input" <?php $this->link(); ?> />
                 </div>
-                <div class="nm-range-slider-unit">
-                    <?php echo $this->unit; ?>
-                </div>
+
+                <?php if ($this->unit) { ?>
+                    <div class="nm-range-slider-unit">
+                        <?php echo esc_html($this->unit); ?>
+                    </div>
+                <?php } ?>
             </div>
 
             <?php
@@ -1555,6 +1558,15 @@ if (class_exists('WP_Customize_Control')) {
          * @var string
          */
         public $type = 'nm-responsive-range-slider';
+        public $unit = '';
+
+        public function __construct($manager, $id, $args = array()) {
+            if (isset($args['unit'])) {
+                $this->unit = $args['unit'];
+            }
+
+            parent::__construct($manager, $id, $args);
+        }
 
         /**
          * Renders the control wrapper and calls $this->render_content() for the internals.
@@ -1579,6 +1591,7 @@ if (class_exists('WP_Customize_Control')) {
             parent::to_json();
 
             $this->json['id'] = $this->id;
+            $this->json['unit'] = $this->unit;
 
             $this->json['inputAttrs'] = '';
             foreach ($this->input_attrs as $attr => $value) {
@@ -1646,6 +1659,9 @@ if (class_exists('WP_Customize_Control')) {
                 <div class="nm-res-range-slider-input">
                     <input {{{ data.inputAttrs }}} type="number" class="slider-input desktop-input" value="{{ data.desktop.value }}" {{{ data.desktop.link }}} />
                 </div>
+                <# if ( data.unit ) { #>
+                <div class="nm-res-range-slider-unit">{{{ data.unit }}}</div>
+                <# } #>
             </div>
             <# } #>
 
@@ -1655,6 +1671,9 @@ if (class_exists('WP_Customize_Control')) {
                 <div class="nm-res-range-slider-input">
                     <input {{{ data.inputAttrs }}} type="number" class="slider-input tablet-input" value="{{ data.tablet.value }}" {{{ data.tablet.link }}} />
                 </div>
+                <# if ( data.unit ) { #>
+                <div class="nm-res-range-slider-unit">{{{ data.unit }}}</div>
+                <# } #>
             </div>
             <# } #>
 
@@ -1664,6 +1683,9 @@ if (class_exists('WP_Customize_Control')) {
                 <div class="nm-res-range-slider-input">
                     <input {{{ data.inputAttrs }}} type="number" class="slider-input mobile-input" value="{{ data.mobile.value }}" {{{ data.mobile.link }}} />
                 </div>
+                <# if ( data.unit ) { #>
+                <div class="nm-res-range-slider-unit">{{{ data.unit }}}</div>
+                <# } #>
             </div>
             <# } #>
 

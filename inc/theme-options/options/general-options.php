@@ -47,7 +47,7 @@
 
     $wp_customize->add_control(new Nobel_Magazine_Range_Slider($wp_customize, 'nobel_magazine_sidebar_width', array(
         'section' => 'nobel_magazine_general_options_section',
-        'label' => esc_html__('Sidebar Width (%)', 'nobel-magazine'),
+        'label' => esc_html__('Sidebar Width', 'nobel-magazine'),
         'input_attrs' => array(
             'min' => 20,
             'max' => 50,

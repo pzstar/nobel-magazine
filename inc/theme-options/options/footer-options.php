@@ -61,11 +61,11 @@
         'label' => esc_html__('Footer Column', 'nobel-magazine'),
         'class' => 'ht-one-third-width',
         'options' => array(
-            'col-1' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'footer-columns/col-1.jpg',
-            'col-2' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'footer-columns/col-2.jpg',
-            'col-3' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'footer-columns/col-3.jpg',
-            'col-3' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'footer-columns/col-3.jpg',
-            'col-4' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'footer-columns/col-4.jpg',
+            'col-1' => get_template_directory_uri() . '/inc/theme-options/footer-columns/col-1.jpg',
+            'col-2' => get_template_directory_uri() . '/inc/theme-options/footer-columns/col-2.jpg',
+            'col-3' => get_template_directory_uri() . '/inc/theme-options/footer-columns/col-3.jpg',
+            'col-3' => get_template_directory_uri() . '/inc/theme-options/footer-columns/col-3.jpg',
+            'col-4' => get_template_directory_uri() . '/inc/theme-options/footer-columns/col-4.jpg',
         )
     )));
 

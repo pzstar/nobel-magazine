@@ -364,8 +364,8 @@ $wp_customize->add_control(new Nobel_Magazine_Selector($wp_customize, 'nobel_mag
     'label' => esc_html__('Header Layout', 'nobel-magazine'),
     'class' => 'ht-full-width',
     'options' => array(
-        'nm-header-style1' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'headers/header-1.png',
-        'nm-header-style2' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'headers/header-2.png',
+        'nm-header-style1' => get_template_directory_uri() . '/inc/theme-options/headers/header-1.png',
+        'nm-header-style2' => get_template_directory_uri() . '/inc/theme-options/headers/header-2.png',
     )
 )));
 

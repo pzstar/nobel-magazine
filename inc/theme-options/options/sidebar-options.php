@@ -16,10 +16,10 @@
         'class' => 'ht-one-forth-width',
         'description' => esc_html__('Applies to all the General Pages and Portfolio Pages.', 'nobel-magazine'),
         'options' => array(
-            'right-sidebar' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'sidebar-layouts/right-sidebar.png',
-            'left-sidebar' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'sidebar-layouts/left-sidebar.png',
-            'no-sidebar' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'sidebar-layouts/no-sidebar.png',
-            'no-sidebar-narrow' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'sidebar-layouts/no-sidebar-narrow.png'
+            'right-sidebar' => get_template_directory_uri() . '/inc/theme-options/sidebar-layouts/right-sidebar.png',
+            'left-sidebar' => get_template_directory_uri() . '/inc/theme-options/sidebar-layouts/left-sidebar.png',
+            'no-sidebar' => get_template_directory_uri() . '/inc/theme-options/sidebar-layouts/no-sidebar.png',
+            'no-sidebar-narrow' => get_template_directory_uri() . '/inc/theme-options/sidebar-layouts/no-sidebar-narrow.png'
         )
     )));
 
@@ -34,10 +34,10 @@
         'class' => 'ht-one-forth-width',
         'description' => esc_html__('Applies to all the Posts.', 'nobel-magazine'),
         'options' => array(
-            'right-sidebar' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'sidebar-layouts/right-sidebar.png',
-            'left-sidebar' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'sidebar-layouts/left-sidebar.png',
-            'no-sidebar' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'sidebar-layouts/no-sidebar.png',
-            'no-sidebar-narrow' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'sidebar-layouts/no-sidebar-narrow.png'
+            'right-sidebar' => get_template_directory_uri() . '/inc/theme-options/sidebar-layouts/right-sidebar.png',
+            'left-sidebar' => get_template_directory_uri() . '/inc/theme-options/sidebar-layouts/left-sidebar.png',
+            'no-sidebar' => get_template_directory_uri() . '/inc/theme-options/sidebar-layouts/no-sidebar.png',
+            'no-sidebar-narrow' => get_template_directory_uri() . '/inc/theme-options/sidebar-layouts/no-sidebar-narrow.png'
         )
     )));
 
@@ -52,10 +52,10 @@
         'class' => 'ht-one-forth-width',
         'description' => esc_html__('Applies to all Archive Pages.', 'nobel-magazine'),
         'options' => array(
-            'right-sidebar' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'sidebar-layouts/right-sidebar.png',
-            'left-sidebar' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'sidebar-layouts/left-sidebar.png',
-            'no-sidebar' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'sidebar-layouts/no-sidebar.png',
-            'no-sidebar-narrow' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'sidebar-layouts/no-sidebar-narrow.png'
+            'right-sidebar' => get_template_directory_uri() . '/inc/theme-options/sidebar-layouts/right-sidebar.png',
+            'left-sidebar' => get_template_directory_uri() . '/inc/theme-options/sidebar-layouts/left-sidebar.png',
+            'no-sidebar' => get_template_directory_uri() . '/inc/theme-options/sidebar-layouts/no-sidebar.png',
+            'no-sidebar-narrow' => get_template_directory_uri() . '/inc/theme-options/sidebar-layouts/no-sidebar-narrow.png'
         )
     )));
 
@@ -70,10 +70,10 @@
         'class' => 'ht-one-forth-width',
         'description' => esc_html__('Applies to Blog Page.', 'nobel-magazine'),
         'options' => array(
-            'right-sidebar' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'sidebar-layouts/right-sidebar.png',
-            'left-sidebar' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'sidebar-layouts/left-sidebar.png',
-            'no-sidebar' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'sidebar-layouts/no-sidebar.png',
-            'no-sidebar-narrow' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'sidebar-layouts/no-sidebar-narrow.png'
+            'right-sidebar' => get_template_directory_uri() . '/inc/theme-options/sidebar-layouts/right-sidebar.png',
+            'left-sidebar' => get_template_directory_uri() . '/inc/theme-options/sidebar-layouts/left-sidebar.png',
+            'no-sidebar' => get_template_directory_uri() . '/inc/theme-options/sidebar-layouts/no-sidebar.png',
+            'no-sidebar-narrow' => get_template_directory_uri() . '/inc/theme-options/sidebar-layouts/no-sidebar-narrow.png'
         )
     )));
 
@@ -88,10 +88,10 @@
         'class' => 'ht-one-forth-width',
         'description' => esc_html__('Applies to Search Page.', 'nobel-magazine'),
         'options' => array(
-            'right-sidebar' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'sidebar-layouts/right-sidebar.png',
-            'left-sidebar' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'sidebar-layouts/left-sidebar.png',
-            'no-sidebar' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'sidebar-layouts/no-sidebar.png',
-            'no-sidebar-narrow' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'sidebar-layouts/no-sidebar-narrow.png'
+            'right-sidebar' => get_template_directory_uri() . '/inc/theme-options/sidebar-layouts/right-sidebar.png',
+            'left-sidebar' => get_template_directory_uri() . '/inc/theme-options/sidebar-layouts/left-sidebar.png',
+            'no-sidebar' => get_template_directory_uri() . '/inc/theme-options/sidebar-layouts/no-sidebar.png',
+            'no-sidebar-narrow' => get_template_directory_uri() . '/inc/theme-options/sidebar-layouts/no-sidebar-narrow.png'
         )
     )));
 
@@ -106,10 +106,10 @@
         'class' => 'ht-one-forth-width',
         'description' => esc_html__('Applies to Shop Page, Product Category, Product Tag and all Single Products Pages.', 'nobel-magazine'),
         'options' => array(
-            'right-sidebar' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'sidebar-layouts/right-sidebar.png',
-            'left-sidebar' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'sidebar-layouts/left-sidebar.png',
-            'no-sidebar' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'sidebar-layouts/no-sidebar.png',
-            'no-sidebar-narrow' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'sidebar-layouts/no-sidebar-narrow.png'
+            'right-sidebar' => get_template_directory_uri() . '/inc/theme-options/sidebar-layouts/right-sidebar.png',
+            'left-sidebar' => get_template_directory_uri() . '/inc/theme-options/sidebar-layouts/left-sidebar.png',
+            'no-sidebar' => get_template_directory_uri() . '/inc/theme-options/sidebar-layouts/no-sidebar.png',
+            'no-sidebar-narrow' => get_template_directory_uri() . '/inc/theme-options/sidebar-layouts/no-sidebar-narrow.png'
         ),
     )));
 

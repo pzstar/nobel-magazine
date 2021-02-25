@@ -83,7 +83,7 @@
     $wp_customize->add_control(new Nobel_Magazine_Image_Selector($wp_customize, 'nobel_magazine_blog_layout', array(
         'section' => 'nobel_magazine_blog_options_section',
         'label' => esc_html__('Blog & Archive Layout', 'nobel-magazine'),
-        'image_path' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'blog-layouts/',
+        'image_path' => get_template_directory_uri() . '/inc/theme-options/blog-layouts/',
         'choices' => array(
             'blog-layout1' => esc_html__('Layout 1', 'nobel-magazine'),
             'blog-layout2' => esc_html__('Layout 2', 'nobel-magazine'),
@@ -229,7 +229,7 @@
         'section' => 'nobel_magazine_blog_options_section',
         'label' => esc_html__('Single Post Layout', 'nobel-magazine'),
         'description' => esc_html__('This option can be overwritten in single page settings.', 'nobel-magazine'),
-        'image_path' => GOOD_MAGAZINE_OPT_DIR_URI_IMAGES . 'single-layouts/',
+        'image_path' => get_template_directory_uri() . '/inc/theme-options/single-layouts/',
         'choices' => array(
             'single-layout1' => esc_html__('Layout 1', 'nobel-magazine'),
             'single-layout2' => esc_html__('Layout 2', 'nobel-magazine'),

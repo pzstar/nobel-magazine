@@ -1268,6 +1268,7 @@ if (class_exists('WP_Customize_Control')) {
 
                 $formatted_buttons[] = array(
                     'name' => $button['name'],
+                    'icon' => isset($button['icon']) ? $button['icon'] : '',
                     'fields' => $button['fields'],
                     'active' => $active,
                 );
@@ -1283,7 +1284,12 @@ if (class_exists('WP_Customize_Control')) {
                 <# if ( data.buttons ) { #>
                 <div class="nm-customizer-tabs">
                     <# for (tab in data.buttons) { #>
-                    <a href="#" class="nm-customizer-tab <# if ( data.buttons[tab].active ) { #> active <# } #>" data-tab="{{ tab }}">{{ data.buttons[tab].name }}</a>
+                    <a href="#" class="nm-customizer-tab <# if ( data.buttons[tab].active ) { #> active <# } #>" data-tab="{{ tab }}">
+                        <# if ( data.buttons[tab].icon ) { #> 
+                        <span class="{{ data.buttons[tab].icon }}"></span>
+                        <# } #>
+                        {{ data.buttons[tab].name }}
+                    </a>
                     <# } #>
                 </div>
                 <# } #>

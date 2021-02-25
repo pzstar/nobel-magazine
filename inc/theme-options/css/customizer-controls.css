@@ -33,16 +33,18 @@
 
 /*Customizer Tabs*/
 .nm-customizer-tabs {
-    background: #000;
+    background: #FFF;
     display: flex;
-    border-radius: 3px;
-    margin-bottom: 10px;
     overflow: hidden;
+    border-top: 3px solid #027cba;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .nm-customizer-tabs a {
-    padding: 8px 5px;
-    color: #FFF;
+    display: flex;
+    align-items: center;
+    padding: 10px 5px;
+    color: #000;
     text-decoration: none;
     outline: 0;
     box-shadow: none;
@@ -50,11 +52,19 @@
     text-align: center;
     display: block;
     white-space: nowrap;
+    line-height: 1;
 }
 
 .nm-customizer-tabs a.active {
     background: #007cba;
     color: #fff;
+}
+
+.nm-customizer-tabs a span {
+    font-size: 1em;
+    height: auto;
+    width: auto;
+    transition: none;
 }
 
 /* General Control CSS */

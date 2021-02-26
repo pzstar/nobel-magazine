@@ -31,12 +31,24 @@
     float: right;
 }
 
+/*Customizer Header*/
+.customize-control-nm-heading .nm-customizer-heading{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: #FFF;
+    padding: 10px;
+    line-height: 1;
+    text-align: center;
+    font-size: 13px;
+    color: #027cba;
+    box-shadow: 0 0 6px rgb(0 0 0 / 5%);
+}
+
 /*Customizer Tabs*/
 .nm-customizer-tabs {
     background: #FFF;
     display: flex;
     overflow: hidden;
-    border-top: 3px solid #027cba;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 

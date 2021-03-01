@@ -9,26 +9,16 @@ jQuery(document).ready(function ($) {
 
     jQuery("html").addClass("colorpicker-ready");
 
-    $("body").on(
-            "click",
-            "#customize-control-nobel_magazine_maintenance_social a, #customize-control-nobel_magazine_social_link a, #customize-control-nobel_magazine_contact_social_link a",
-            function () {
-                wp.customize.section("nobel_magazine_social_section").expand();
-                return false;
-            }
-    );
+    $("body").on("click", "#customize-control-nobel_magazine_maintenance_social a, #customize-control-nobel_magazine_social_link a, #customize-control-nobel_magazine_contact_social_link a", function () {
+        wp.customize.section("nobel_magazine_social_section").expand();
+        return false;
+    });
 
     var $eventSelect = $(".nm-select2-chooser");
     $eventSelect.select2();
     $eventSelect.on("change", function (e) {
-        console.log(e);
         var cats = e.val.join();
-        console.log(cats);
-
-        $(e.currentTarget)
-                .next("input[type=hidden]")
-                .val(cats)
-                .change();
+        $(e.currentTarget).next("input[type=hidden]").val(cats).change();
     });
 
     /** Top Header Display */
@@ -292,7 +282,7 @@ jQuery(document).ready(function ($) {
 
     /** Top Header Left Display */
     wp.customize("nobel_magazine_th_left_display", function (setting) {
-        
+
         var setupControlSocial = function (control) {
             var visibility = function () {
                 var header_display = wp.customize("nobel_magazine_top_header_display").get();
@@ -344,7 +334,7 @@ jQuery(document).ready(function ($) {
             visibility();
             setting.bind(visibility);
         };
-        
+
         var setupControlDate = function (control) {
             var visibility = function () {
                 var header_display = wp.customize("nobel_magazine_top_header_display").get();
@@ -357,7 +347,7 @@ jQuery(document).ready(function ($) {
             visibility();
             setting.bind(visibility);
         };
-        
+
         wp.customize.control("nobel_magazine_th_left_social", setupControlSocial);
         wp.customize.control("nobel_magazine_th_left_menu", setupControlMenu);
         wp.customize.control("nobel_magazine_th_left_widget", setupControlWidget);
@@ -379,7 +369,7 @@ jQuery(document).ready(function ($) {
             visibility();
             setting.bind(visibility);
         };
-        
+
         var setupControlMenu = function (control) {
             var visibility = function () {
                 var header_display = wp.customize("nobel_magazine_top_header_display").get();
@@ -418,7 +408,7 @@ jQuery(document).ready(function ($) {
             visibility();
             setting.bind(visibility);
         };
-        
+
         var setupControlDate = function (control) {
             var visibility = function () {
                 var header_display = wp.customize("nobel_magazine_top_header_display").get();
@@ -431,7 +421,7 @@ jQuery(document).ready(function ($) {
             visibility();
             setting.bind(visibility);
         };
-        
+
         wp.customize.control("nobel_magazine_th_center_social", setupControlSocial);
         wp.customize.control("nobel_magazine_th_center_menu", setupControlMenu);
         wp.customize.control("nobel_magazine_th_center_widget", setupControlWidget);
@@ -441,7 +431,7 @@ jQuery(document).ready(function ($) {
 
     /** Top Header Right Display */
     wp.customize("nobel_magazine_th_right_display", function (setting) {
-        
+
         var setupControlSocial = function (control) {
             var visibility = function () {
                 var header_display = wp.customize("nobel_magazine_top_header_display").get();
@@ -493,7 +483,7 @@ jQuery(document).ready(function ($) {
             visibility();
             setting.bind(visibility);
         };
-        
+
         var setupControlDate = function (control) {
             var visibility = function () {
                 var header_display = wp.customize("nobel_magazine_top_header_display").get();
@@ -506,7 +496,7 @@ jQuery(document).ready(function ($) {
             visibility();
             setting.bind(visibility);
         };
-        
+
         wp.customize.control("nobel_magazine_th_right_social", setupControlSocial);
         wp.customize.control("nobel_magazine_th_right_menu", setupControlMenu);
         wp.customize.control("nobel_magazine_th_right_widget", setupControlWidget);

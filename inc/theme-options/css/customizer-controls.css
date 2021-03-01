@@ -954,14 +954,17 @@
 
 /*Dimension Control*/
 .customize-control-dimensions > ul {
-    display: inline-block;
+    display: flex;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .customize-control-dimensions .nm-dimension-wrap {
     float: left;
-    width: 20%;
+    flex-grow: 1;
     margin: 0;
+    padding: 0;
 }
 
 .customize-control-dimensions .nm-dimension-wrap input,

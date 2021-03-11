@@ -6,7 +6,7 @@
 if (class_exists('WP_Customize_Control')) {
 
     /** Repeater Control */
-    class Nobel_Magazine_Repeater_Controler extends WP_Customize_Control {
+    class Nobel_Magazine_Repeater extends WP_Customize_Control {
 
         /**
          * The control type.
@@ -313,7 +313,7 @@ if (class_exists('WP_Customize_Control')) {
     }
 
     /** Heading Control */
-    class Nobel_Magazine_Heading_Custom_Control extends WP_Customize_Control {
+    class Nobel_Magazine_Heading extends WP_Customize_Control {
 
         /** Control Type */
         public $type = 'nm-heading';
@@ -332,7 +332,7 @@ if (class_exists('WP_Customize_Control')) {
     }
 
     /** Select2 Chooser */
-    class Nobel_Magazine_Select2_Control extends WP_Customize_Control {
+    class Nobel_Magazine_Select2 extends WP_Customize_Control {
 
         public $type = 'nm-select2';
 
@@ -435,7 +435,7 @@ if (class_exists('WP_Customize_Control')) {
     }
 
     /** Multiple Checkbox Control */
-    class Nobel_Magazine_Customize_Checkbox_Multiple extends WP_Customize_Control {
+    class Nobel_Magazine_Multiple_Checkbox extends WP_Customize_Control {
 
         public $type = 'nm-checkbox-multiple';
 
@@ -888,7 +888,7 @@ if (class_exists('WP_Customize_Control')) {
     }
 
     /** Gradient Control */
-    class Nobel_Magazine_Gradient_Selector extends WP_Customize_Control {
+    class Nobel_Magazine_Gradient extends WP_Customize_Control {
 
         public $type = 'nm-gradient';
         public $params = array();
@@ -1300,7 +1300,7 @@ if (class_exists('WP_Customize_Control')) {
     }
 
     /** Date Control */
-    class Nobel_Magazine_Date_Control extends WP_Customize_Control {
+    class Nobel_Magazine_Date extends WP_Customize_Control {
 
         public $type = 'nm-date-picker';
 
@@ -1325,7 +1325,7 @@ if (class_exists('WP_Customize_Control')) {
     }
 
     /** Dimensions Control */
-    class Nobel_Magazine_Dimensions_Control extends WP_Customize_Control {
+    class Nobel_Magazine_Dimensions extends WP_Customize_Control {
 
         /**
          * The control type.

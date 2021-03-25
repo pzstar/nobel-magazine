@@ -147,7 +147,7 @@ $wp_customize->add_setting('nobel_magazine_th_left_header', array(
     'sanitize_callback' => 'nobel_magazine_sanitize_text'
 ));
 
-$wp_customize->add_control(new Nobel_Magazine_Heading_Custom_Control($wp_customize, 'nobel_magazine_th_left_header', array(
+$wp_customize->add_control(new Nobel_Magazine_Heading($wp_customize, 'nobel_magazine_th_left_header', array(
     'label' => esc_html__('Top Left Header', 'nobel-magazine'),
     'section' => 'nobel_magazine_top_header_options',
 )));
@@ -221,7 +221,7 @@ $wp_customize->add_setting('nobel_magazine_th_center_header', array(
     'sanitize_callback' => 'nobel_magazine_sanitize_text'
 ));
 
-$wp_customize->add_control(new Nobel_Magazine_Heading_Custom_Control($wp_customize, 'nobel_magazine_th_center_header', array(
+$wp_customize->add_control(new Nobel_Magazine_Heading($wp_customize, 'nobel_magazine_th_center_header', array(
     'label' => esc_html__('Top Center Header', 'nobel-magazine'),
     'section' => 'nobel_magazine_top_header_options',
 )));
@@ -295,7 +295,7 @@ $wp_customize->add_setting('nobel_magazine_th_right_header', array(
     'sanitize_callback' => 'nobel_magazine_sanitize_text'
 ));
 
-$wp_customize->add_control(new Nobel_Magazine_Heading_Custom_Control($wp_customize, 'nobel_magazine_th_right_header', array(
+$wp_customize->add_control(new Nobel_Magazine_Heading($wp_customize, 'nobel_magazine_th_right_header', array(
     'label' => esc_html__('Top Right Header', 'nobel-magazine'),
     'section' => 'nobel_magazine_top_header_options',
 )));
@@ -397,7 +397,7 @@ $wp_customize->add_setting('nobel_magazine_th_spacing_bottom_mobile', array(
     'transport' => 'postMessage'
 ));
 
-$wp_customize->add_control(new Nobel_Magazine_Dimensions_Control($wp_customize, 'nobel_magazine_th_spacing', array(
+$wp_customize->add_control(new Nobel_Magazine_Dimensions($wp_customize, 'nobel_magazine_th_spacing', array(
     'section' => 'nobel_magazine_top_header_options',
     'label' => esc_html__('Top & Bottom Paddings (px)', 'total-plus'),
     'settings' => array(

@@ -86,7 +86,7 @@ $wp_customize->add_setting('nobel_magazine_mh_spacing_bottom_mobile', array(
     'transport' => 'postMessage'
 ));
 
-$wp_customize->add_control(new Nobel_Magazine_Dimensions_Control($wp_customize, 'nobel_magazine_mh_spacing', array(
+$wp_customize->add_control(new Nobel_Magazine_Dimensions($wp_customize, 'nobel_magazine_mh_spacing', array(
     'section' => 'nobel_magazine_main_header_options',
     'label' => esc_html__('Top & Bottom Spacing (px)', 'total-plus'),
     'settings' => array(

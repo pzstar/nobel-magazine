@@ -20,7 +20,7 @@
         'priority' => 1
     ));
     
-    $wp_customize->add_control(new Nobel_Magazine_Heading_Custom_Control($wp_customize, 'nobel_magazine_content_color_heading', array(
+    $wp_customize->add_control(new Nobel_Magazine_Heading($wp_customize, 'nobel_magazine_content_color_heading', array(
         'section' => 'colors',
         'label' => esc_html__('Content Color', 'nobel-magazine')
     )));

@@ -32,7 +32,7 @@
             ))
         ) );
         
-        $wp_customize->add_control(new Nobel_Magazine_Repeater_Controler( $wp_customize, 'nobel_magazine_social_icons', array(
+        $wp_customize->add_control(new Nobel_Magazine_Repeater( $wp_customize, 'nobel_magazine_social_icons', array(
             'label' => esc_html__('Add Social Link', 'nobel-magazine'),
             'section' => 'nobel_magazine_social_icons_section',
             'box_label' => esc_html__('Social Links', 'nobel-magazine'),

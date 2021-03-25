@@ -94,7 +94,7 @@
         'sanitize_callback' => 'nobel_magazine_sanitize_text'
     ));
 
-    $wp_customize->add_control(new Nobel_Magazine_Select2_Control($wp_customize, 'nobel_magazine_blog_cat', array(
+    $wp_customize->add_control(new Nobel_Magazine_Select2($wp_customize, 'nobel_magazine_blog_cat', array(
         'label' => esc_html__('Exclude Category', 'nobel-magazine'),
         'section' => 'nobel_magazine_blog_options_section',
         'choices' => nobel_magazine_categories_list(),

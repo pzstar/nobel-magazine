@@ -30,7 +30,7 @@ function nobel_magazine_theme_options($wp_customize) {
     /** Register Control Type */
     $wp_customize->register_control_type('Nobel_Magazine_Background_Image');
     $wp_customize->register_control_type('Nobel_Magazine_Tab');
-    $wp_customize->register_control_type('Nobel_Magazine_Dimensions_Control');
+    $wp_customize->register_control_type('Nobel_Magazine_Dimensions');
     $wp_customize->register_control_type('Nobel_Magazine_Responsive_Range_Slider');
     $wp_customize->register_control_type('Nobel_Magazine_Sortable');
     $wp_customize->register_control_type('Nobel_Magazine_Tab');

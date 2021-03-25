@@ -480,7 +480,7 @@ if (class_exists('WP_Customize_Control')) {
     /** Dropdown Multiple Chooser Control */
     class Nobel_Magazine_Multiple_Select extends WP_Customize_Control {
 
-        public $type = 'mn-multiple-select';
+        public $type = 'nm-multiple-select';
         public $placeholder = '';
 
         public function __construct($manager, $id, $args = array()) {
@@ -1333,7 +1333,7 @@ if (class_exists('WP_Customize_Control')) {
          * @access public
          * @var string
          */
-        public $type = 'dimensions';
+        public $type = 'nm-dimensions';
 
         /**
          * Renders the control wrapper and calls $this->render_content() for the internals.
@@ -1792,7 +1792,7 @@ if (class_exists('WP_Customize_Control')) {
     /** Color Tab Control */
     class Nobel_Magazine_Color_Tab extends WP_Customize_Control {
 
-        public $type = 'nm-nm-color-tab';
+        public $type = 'nm-color-tab';
 
         /**
          * Add support for palettes to be passed in.

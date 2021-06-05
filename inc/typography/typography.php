@@ -204,8 +204,8 @@ function nobel_magazine_typography_customize_register($wp_customize) {
 add_action('customize_controls_enqueue_scripts', 'nobel_magazine_typography_customizer_script');
 
 function nobel_magazine_typography_customizer_script() {
-    wp_enqueue_script('viral-pro-customize-controls', get_template_directory_uri() . '/inc/typography/js/customize-controls.js', array('jquery'), '1.0.0', true);
-    wp_enqueue_style('viral-pro-customize-controls', get_template_directory_uri() . '/inc/typography/css/customize-controls.css');
+    wp_enqueue_script('nobel-magazine-customize-controls', get_template_directory_uri() . '/inc/typography/js/customize-controls.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_style('nobel-magazine-customize-controls', get_template_directory_uri() . '/inc/typography/css/customize-controls.css');
 }
 
 /**
@@ -216,7 +216,7 @@ add_action('customize_preview_init', 'nobel_magazine_typography_customize_previe
 
 function nobel_magazine_typography_customize_preview_script() {
     wp_enqueue_script('webfont', 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js', array('jquery'));
-    wp_enqueue_script('viral-pro-customize-preview', get_template_directory_uri() . '/inc/typography/js/customize-previews.js', array('jquery', 'customize-preview', 'webfont'));
+    wp_enqueue_script('nobel-magazine-customize-preview', get_template_directory_uri() . '/inc/typography/js/customize-previews.js', array('jquery', 'customize-preview', 'webfont'));
 }
 
 function nobel_magazine_get_google_font_variants() {
